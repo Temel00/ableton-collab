@@ -1,27 +1,131 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --main-white: #fbf9ff;
+  --main-bg: #f7f6f2;
+  --main-dark: #283845;
+  --main-color: #f2d492;
+  --main-accent: #f29559;
+
+  background: var(--main-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.homeBG {
+  background: var(--main-bg);
+  box-shadow: 3px 3px 9px var(--main-dark);
+  padding: 1rem;
+  border-radius: 1em;
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Rajdhani", sans-serif;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.mainNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: var(--main-dark);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.mainNav a {
+  font-size: 1.5rem;
+  color: var(--main-white);
+  text-decoration: none;
+  font-family: "Passion One", cursive;
+  margin: 0.5rem 2rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.bubbleBut {
+  background: var(--main-accent);
+  padding: 0.25em 1em;
+  border-radius: 999em;
+  text-decoration: none;
+}
+
+.profileButton {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1em;
+}
+
+.profileButton img {
+  border-radius: 50%;
+}
+
+.loginBG {
+  font-family: "Rajdhani", sans-serif;
+  background: var(--main-bg);
+  padding: 1rem;
+  border-radius: 1em;
+  margin-top: 8rem;
+  box-shadow: 3px 3px 9px var(--main-dark);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.buttonBin {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+}
+
+.buttonBin button {
+  display: flex;
+  align-items: center;
+  background: var(--main-bg);
+  border-radius: 999em;
+  border: none;
+  padding: 1em;
+  font-family: "Passion One", cursive;
+  gap: 1em;
+  transition: all 1s ease;
+}
+
+.buttonBin button:hover {
+  background: var(--main-white);
+}
+
+.buttonBin button svg {
+  font-size: 25px;
+}
+
+.dashboardBG {
+  font-family: "Rajdhani", sans-serif;
+  margin-top: 8rem;
+}
+
+.projectsBG {
+  font-family: "Rajdhani", sans-serif;
+  margin-top: 8rem;
+}
+
+.projectsBin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.BinCard {
+  box-shadow: 3px 3px 9px var(--main-dark);
+  border-radius: 1em;
+  padding: 1em 4em;
+  margin: 1em;
+}
+
+.ProjectPage {
+  font-family: "Rajdhani", sans-serif;
+  margin-top: 8rem;
 }
