@@ -113,9 +113,13 @@
   margin-top: 8rem;
 }
 
+.projectsBG input {
+  display: none;
+}
+
 .projectsBin {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-flow: rows nowrap;
 }
 
 .BinCard {
@@ -128,4 +132,71 @@
 .ProjectPage {
   font-family: "Rajdhani", sans-serif;
   margin-top: 8rem;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+/* .ProjName {
+  grid-area: 1 / 1 / 2 / 3;
+  place-self: center;
+}
+
+.UserName {
+  place-self: center;
+} */
+.ProjHead {
+  grid-area: 1 / 1 / 2 / 4;
+  place-self: center;
+  text-align: right;
+  line-height: 0.5em;
+}
+
+.ProjectPage button {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  justify-self: center;
+  align-self: center;
+  border-radius: 999em;
+  border: none;
+  color: var(--main-white);
+  background: var(--main-accent);
+  grid-area: 5 / 1 / 6 / 3;
+}
+
+.custom-file-upload {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 999em;
+  justify-self: center;
+  align-self: center;
+  color: var(--main-white);
+  background: var(--main-accent);
+  grid-area: 5 / 2 / 6 / 4;
+}
+
+.custom-audio-upload {
+  font-family: "Rajdhani", sans-serif;
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  border-radius: 999em;
+  justify-self: center;
+  align-self: center;
+  color: var(--main-white);
+  background: var(--main-accent);
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.ProjectPage input {
+  display: none;
+}
+
+.audio-player {
+  grid-area: 2 / 2 / 3 / 4;
+  margin-right: 5rem;
+  place-self: center stretch;
+  width: auto;
 }
