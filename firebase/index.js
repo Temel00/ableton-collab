@@ -3,12 +3,12 @@ import { getAuth } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyDtY5IUFSaAA44kLSSju9EumkcBaYkGK-Q',
-  authDomain: 'floracare-f6bd1.firebaseapp.com',
-  projectId: 'floracare-f6bd1',
-  storageBucket: 'floracare-f6bd1.appspot.com',
-  messagingSenderId: '152182436495',
-  appId: '1:152182436495:web:617ff062f9dd57971276fa',
+  apiKey: 'AIzaSyDhib3tvwr_Cse2I1N1rMj_cqXAzMqnQ_U',
+  authDomain: 'ableton-collab.firebaseapp.com',
+  projectId: 'ableton-collab',
+  storageBucket: 'ableton-collab.appspot.com',
+  messagingSenderId: '67335929003',
+  appId: '1:67335929003:web:c1d810d1e68fd38516cbee',
 };
 
 const app = initializeApp(firebaseConfig);
