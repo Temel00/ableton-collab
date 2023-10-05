@@ -1,5 +1,4 @@
 import React from 'react';
-import { Box, Button, Link, Text } from '@chakra-ui/react';
 import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 import { FaGoogle } from 'react-icons/fa';
 import { auth } from '../firebase';
@@ -34,46 +33,22 @@ const Auth = () => {
   };
 
   return (
-    <Box className={styles.authBox}>
+    <div className={styles.authBox}>
       {isLoggedIn && (
         <>
-          <Text style={{ fontSize: '.5em' }}>Hi, {(user as any).displayName}</Text>
-          <Link
-            style={{
-              border: '1px solid var(--main-black)',
-              padding: '.25em .75em',
-              borderRadius: '999em',
-              textAlign: 'center',
-              justifyContent: 'center',
-              alignItems: 'center',
-              cursor: 'pointer',
-              fontSize: '.6em',
-            }}
-            onClick={() => auth.signOut()}
-          >
+          <p>Hi, {(user as any).displayName}</p>
+          <button className={styles.authSignout} onClick={() => auth.signOut()}>
             Logout
-          </Link>
+          </button>
         </>
       )}
       {!isLoggedIn && (
-        <Button
-          style={{
-            color: 'var(--dark-green)',
-            background: 'none',
-            border: '1px solid var(--main-black)',
-            borderRadius: '999em',
-            padding: '.25em .75em',
-            fontFamily: 'dico-sans-soft',
-            fontWeight: '400',
-            fontStyle: 'normal',
-          }}
-          leftIcon={<FaGoogle />}
-          onClick={() => handleAuth()}
-        >
+        <button className={styles.authSignin} onClick={() => handleAuth()}>
+          <FaGoogle />
           SignIn
-        </Button>
+        </button>
       )}
-    </Box>
+    </div>
   );
 };
 

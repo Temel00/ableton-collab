@@ -1,16 +1,16 @@
 import styles from '../styles/Home.module.css';
 import Link from 'next/link';
 
-type footerProps = {
+type navProps = {
   activePage: number;
 };
 
-const Footer = (props: footerProps) => {
+const Nav = (props: navProps) => {
   return (
     <>
-      <footer className={styles.footer}>
+      <nav className={styles.nav}>
         {props.activePage == 1 ? (
-          <Link className={styles.footerLinkActive} href="/" passHref>
+          <Link className={styles.navLinkActive} href="/" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -22,7 +22,7 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         ) : (
-          <Link className={styles.footerLink} href="/" passHref>
+          <Link className={styles.navLink} href="/" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -34,9 +34,9 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         )}
-        <span className={styles.footerDivider}></span>
+        <span className={styles.navDivider}></span>
         {props.activePage == 2 ? (
-          <Link className={styles.footerLinkActive} href="/spaces" passHref>
+          <Link className={styles.navLinkActive} href="/songs" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -48,7 +48,7 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         ) : (
-          <Link className={styles.footerLink} href="/spaces" passHref>
+          <Link className={styles.navLink} href="/songs" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -60,9 +60,9 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         )}
-        <span className={styles.footerDivider}></span>
+        <span className={styles.navDivider}></span>
         {props.activePage == 3 ? (
-          <Link className={styles.footerLinkActive} href="/about" passHref>
+          <Link className={styles.navLinkActive} href="/about" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -74,7 +74,7 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         ) : (
-          <Link className={styles.footerLink} href="/about" passHref>
+          <Link className={styles.navLink} href="/about" passHref>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24"
@@ -86,9 +86,9 @@ const Footer = (props: footerProps) => {
             </svg>
           </Link>
         )}
-      </footer>
+      </nav>
     </>
   );
 };
 
-export default Footer;
+export default Nav;
