@@ -9,6 +9,7 @@ import { NextPage } from 'next';
 import { useSearchParams } from 'next/navigation';
 import { getDoc, setDoc, doc } from 'firebase/firestore';
 import { db } from '../../firebase';
+import AudioControls from '../../components/audioControls';
 
 type Song = {
   id: string;
@@ -69,6 +70,10 @@ const Page: NextPage = () => {
             <h4>Version: {song[0]?.version}</h4>
             <h4>Created: {song[0]?.createdAt}</h4>
             <h4>Song URL: {song[0]?.song_url}</h4>
+            <div>
+              <h4>Audio Player</h4>
+              <AudioControls />
+            </div>
           </section>
         ) : (
           <div className={styles.loginContent}>

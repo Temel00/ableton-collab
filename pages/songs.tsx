@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Header from '../components/header';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useGlobalAudioPlayer } from 'react-use-audio-player';
+import AudioControls from '../components/audioControls';
 
 type Song = {
   createdAt: Date;
@@ -24,7 +25,7 @@ type Song = {
 const Songs: NextPage = () => {
   const { isLoggedIn, user } = useAuth();
   const [songs, setSongs] = useState<Song>([]);
-  const { load } = useGlobalAudioPlayer();
+  const { load, playing } = useGlobalAudioPlayer();
 
   useEffect(() => {
     refreshSongs();
@@ -73,25 +74,6 @@ const Songs: NextPage = () => {
       console.log(error);
     }
   };
-
-  // const handleCreateSongList = async (e: any) => {
-  //   console.log(e.value);
-  //   try {
-  //     const newSongRef = doc(collection(db, 'songs'));
-
-  //     const data = {
-  //       createdAt: Date.now(),
-  //       description: '',
-  //       title: e.value,
-  //       user: (user as any).uid,
-  //       color: '4444cc',
-  //     };
-
-  //     await setDoc(newSongRef, data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return (
     <div className={styles.container}>
@@ -193,6 +175,7 @@ const Songs: NextPage = () => {
             })}
             <div>
               <h4>Audio Player</h4>
+              <AudioControls />
             </div>
           </section>
         ) : (
