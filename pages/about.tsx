@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Nav from '../components/nav';
 import styles from '../styles/Home.module.css';
 import Header from '../components/header';
+import AudioControls from '../components/audioControls';
 
 const About: NextPage = () => {
   return (
@@ -18,8 +19,8 @@ const About: NextPage = () => {
         <div className={styles.aboutContent}>
           <h1>This is the About page.</h1>
         </div>
+        <AudioControls />
       </main>
-      <Nav activePage={3} />
     </>
   );
 };

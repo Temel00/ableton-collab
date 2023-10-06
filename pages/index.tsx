@@ -1,29 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Nav from '../components/nav';
 import styles from '../styles/Home.module.css';
-import { FaRecycle } from 'react-icons/fa';
 import useAuth from '../hooks/useAuth';
-
-import Link from 'next/link';
-
 import Header from '../components/header';
-import { useEffect, useState } from 'react';
-import { Input } from '@nextui-org/react';
-import { db } from '../firebase';
-import {
-  collection,
-  query,
-  where,
-  addDoc,
-  getDoc,
-  setDoc,
-  doc,
-  updateDoc,
-  arrayUnion,
-  DocumentData,
-  getDocs,
-} from 'firebase/firestore';
+import AudioControls from '../components/audioControls';
 
 const Home: NextPage = () => {
   const { isLoggedIn, user } = useAuth();
@@ -43,9 +23,12 @@ const Home: NextPage = () => {
         <Header activePage={1} />
 
         {isLoggedIn && user != null && user != '' ? (
-          <section className={styles.homeContent}>
-            <h2>Welcome, {(user as any).displayName}</h2>
-          </section>
+          <>
+            <section className={styles.homeContent}>
+              <h2>Welcome, {(user as any).displayName}</h2>
+            </section>
+            <AudioControls />
+          </>
         ) : (
           <div className={styles.loginContent}>
             <h4>

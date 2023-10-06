@@ -5,6 +5,7 @@
   --dark-green: #143109;
   --light-gray: #efefef;
   --main-white: #fcf7ed;
+  --main-orange: #fba925;
   background: var(--main-white);
 }
 
@@ -25,10 +26,10 @@ h1 {
 }
 
 h2 {
-  font-family: 'interface', sans-serif;
-  font-weight: 800;
+  font-family: 'laca', sans-serif;
+  font-weight: 300;
   font-style: normal;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 h3 {
