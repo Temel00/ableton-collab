@@ -1,120 +1,257 @@
-/* ------------------------Global Styles------------------------------ */
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 1;
-}
-
-.mainContent {
-  align-items: center;
-  overflow-y: scroll;
-  display: flex;
-  flex-flow: column nowrap;
-  max-height: 70vh;
-  gap: 1em;
-  justify-content: center;
-  font-family: 'snicker', sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.mainContent h2 {
-  margin-top: 1em;
-  text-align: center;
-}
-
-.loginContent {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  text-align: center;
-  margin-top: 3em;
-  color: var(--dark-brown);
-}
-
-.loginContent h4 span {
-  font-size: 1.5em;
-  line-height: 2em;
-}
+/* COMPONENT STYLES */
+/* ---------------------------------------------------------------------- */
 
 /* ------------------------Header Styles------------------------------ */
 
 .header {
-  position: relative;
-  width: 100vw;
-  height: 100px;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: var(--light-green);
-  border-bottom: 1px solid var(--main-green);
-}
-
-.headerBG img {
-  width: 100vw;
+  flex-flow: row nowrap;
+  width: 100%;
+  min-width: 300px;
+  justify-content: space-between;
 }
 
 .logo {
-  width: 50px;
+  width: 40%;
+  max-width: 200px;
+  border-radius: 0 0 1em 0;
+  border: 3px solid var(--main-black);
+  background-color: var(--light-gray);
 }
 
-.headerTitle {
-  font-size: 1.5em;
-  color: var(--dark-brown);
+.headerLinks {
+  width: 50%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.headerTitleEnd {
-  color: var(--dark-green);
-}
+/* ------------------------Auth Component Styles------------------------------ */
 
 .authBox {
+  width: 60%;
   text-align: center;
-  width: 50px;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: center;
-  background-color: none;
+  background-color: var(--light-gray);
   color: var(--dark-green);
+  border-radius: 0 0 0 1em;
+  border: 3px solid var(--main-black);
 }
 
-/* ------------------------Footer Styles------------------------------ */
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 150px;
-  background-image: linear-gradient(var(--main-brown), var(--dark-brown));
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-  justify-content: space-evenly;
+.authBox p {
+  margin: 0.5em 0.5em 0 0.5em;
+  color: (--main-black);
 }
 
-.footerDivider {
-  height: 100px;
-  border-left: 1px solid var(--main-black);
+.authBox button {
+  background-color: var(--light-green);
+  border: 1px solid var(--main-green);
+  color: (--main-black);
+  border-radius: 999em;
+  padding: 0.25em 0.5em;
+  margin-block: 0.5em;
 }
 
-.footerLinkActive svg {
-  height: 40px;
-  width: 40px;
-  color: var(--dark-brown);
+.authSignout {
+  cursor: pointer;
 }
 
-.footerLink svg {
-  height: 35px;
-  width: 40px;
+.authSignin {
   color: var(--main-black);
 }
 
-/* ------------------------About Page Styles------------------------------ */
+/* ------------------------Nav Component Styles------------------------------ */
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+  margin-bottom: 1em;
+}
 
+.nav a {
+  width: 35px;
+  height: 35px;
+  background-color: var(--light-green);
+  padding: 0.25em;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.25em;
+}
+
+.navLinkActive {
+  color: var(--main-green);
+}
+
+.navLink {
+  color: var(--main-black);
+}
+
+/* ------------------Audio Controls Component Styles---------------------- */
+.audioControlsBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 0.5em 2em 0 2em;
+  background: var(--light-green);
+  box-shadow: 0px 0px 10px var(--dark-green);
+  transform: translate(0px, 150px);
+  transition: all 1s ease;
+}
+
+.audioControls {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  color: var(--main-black);
+  align-items: center;
+}
+
+.audioControlButtons {
+  display: flex;
+  gap: 1em;
+}
+
+.audioControlButtons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--main-black);
+  background: var(--light-gray);
+}
+
+.audioVolume {
+  display: flex;
+  gap: 0.25em;
+}
+
+.audioVolume input {
+  --cvol: var(--main-green); /* active color */
+  --g: 8px; /* the gap */
+  --l: 5px; /* line thickness*/
+  --s: 20px; /* thumb size*/
+}
+
+.audioSeek input {
+  --cseek: var(--dark-green); /* active color */
+  --g: 8px; /* the gap */
+  --l: 5px; /* line thickness*/
+  --s: 25px; /* thumb size*/
+}
+
+.audioVolume input,
+.audioSeek input {
+  height: var(--s); /* needed for Firefox*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.audioVolume input[type='range' i]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 var(--l) inset var(--cvol);
+  border-image: linear-gradient(90deg, var(--cvol) 50%, #ababab 0) 1/0 100vw/0
+    calc(100vw + var(--g));
+}
+
+.audioSeek input[type='range' i]::-webkit-slider-thumb {
+  box-shadow: 0 0 0 var(--l) inset var(--cseek);
+  border-image: linear-gradient(90deg, var(--cseek) 50%, #ababab 0) 1/0 100vw/0
+    calc(100vw + var(--g));
+}
+
+.audioVolume input[type='range' i]::-webkit-slider-thumb,
+.audioSeek input[type='range' i]::-webkit-slider-thumb {
+  height: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  clip-path: polygon(
+    0 calc(50% + var(--l) / 2),
+    -100vw calc(50% + var(--l) / 2),
+    -100vw calc(50% - var(--l) / 2),
+    0 calc(50% - var(--l) / 2),
+    0 0,
+    100% 0,
+    100% calc(50% - var(--l) / 2),
+    100vw calc(50% - var(--l) / 2),
+    100vw calc(50% + var(--l) / 2),
+    100% calc(50% + var(--l) / 2),
+    100% 100%,
+    0 100%
+  );
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.audioVolume input[type='range']::-moz-range-thumb,
+.audioSeek input[type='range']::-moz-range-thumb {
+  height: var(--s);
+  width: var(--s);
+  background: none;
+  border-radius: 50%;
+  box-shadow: 0 0 0 var(--l) inset var(--c);
+  border-image: linear-gradient(90deg, var(--c) 50%, #ababab 0) 1/0 100vw/0 calc(100vw + var(--g));
+  clip-path: polygon(
+    0 calc(50% + var(--l) / 2),
+    -100vw calc(50% + var(--l) / 2),
+    -100vw calc(50% - var(--l) / 2),
+    0 calc(50% - var(--l) / 2),
+    0 0,
+    100% 0,
+    100% calc(50% - var(--l) / 2),
+    100vw calc(50% - var(--l) / 2),
+    100vw calc(50% + var(--l) / 2),
+    100% calc(50% + var(--l) / 2),
+    100% 100%,
+    0 100%
+  );
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.audioSeek {
+  width: 100%;
+  padding: 1em;
+}
+
+.audioSeek input {
+  width: 100%;
+}
+
+.audioSeekTime {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* PAGE STYLES */
+/* ---------------------------------------------------------------------- */
+
+/* ------------------------Home Page Styles------------------------------ */
+/* Home:  */
+.homeContent {
+  align-items: center;
+  overflow-y: scroll;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1em;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+/* ------------------------About Page Styles------------------------------ */
+/* About:  */
 .about {
   display: flex;
   align-items: flex-start;
@@ -131,24 +268,78 @@
   margin-top: 5em;
 }
 
-/* ------------------------Home Page Styles------------------------------ */
+/* ------------------------Songs Page Styles------------------------------ */
+/* Songs: */
+.song {
+  color: var(--main-black);
+}
 
-.expBox {
+.songContent {
   align-items: center;
+  overflow-y: scroll;
   display: flex;
   flex-flow: column nowrap;
-  gap: 1em;
+  justify-content: center;
+  padding-top: 1em;
+}
+
+/* Songs: Songlist header */
+.songTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
   justify-content: center;
 }
 
-.expItem {
+.songTitle svg {
+  justify-self: start;
+  width: 2em;
+}
+
+.songTitle h2 {
+  text-align: center;
+  margin-right: 3em;
+  margin-left: 2em;
+  transition: all 1s ease;
+}
+
+/* Songs: Songlist Buttons */
+.songlistButtons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  margin-bottom: 1em;
+}
+
+.songlistButtons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.songlistButtons button,
+.songlistButtons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--main-black);
+  background: var(--light-gray);
+}
+
+/* Songs: Song items */
+.songItem {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.25em;
 }
 
-.expName {
+.songName {
   border: 2px solid var(--main-black);
   border-radius: 20px 40px 40px 20px;
   padding: 0.5em 1em;
@@ -157,80 +348,101 @@
   justify-content: space-between;
   align-items: center;
   background: var(--main-white);
+  font-size: 1.25em;
 }
 
-.expTag {
+.songTag {
   background: var(--main-green);
   border: 2px solid var(--main-black);
   height: 40px;
   width: 35px;
   border-radius: 40px 20px 20px 40px;
+}
+
+.songPlay {
+  background: var(--main-green);
+  border: 2px solid var(--main-black);
+  height: 45px;
+  width: 40px;
+  border-radius: 40px 20px 20px 40px;
   cursor: pointer;
 }
 
-.expTrash {
+.songTrash {
   border: none;
   background: none;
   color: var(--main-black);
   cursor: pointer;
 }
 
-.addTodo {
-  background: var(--main-orange);
-  border: 2px solid var(--main-black);
-  border-radius: 999em;
-  padding: 0.5em 1em;
+/* ------------------------Add Page Styles------------------------------ */
+/* Add: add Song form */
+.addForm {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 1em;
+}
+
+/* Add: Add header */
+.addTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.addTitle svg {
+  justify-self: start;
+  width: 2em;
+}
+
+.addTitle h2 {
+  text-align: center;
+  margin-right: 3em;
+  margin-left: 2em;
+  transition: all 1s ease;
+}
+
+/* Add: input styles on add Song form */
+.addForm input,
+.addForm label {
+  font-family: 'laca', sans-serif;
+  font-weight: 200;
+  font-style: normal;
   font-size: 1.25em;
 }
 
-/* ------------------------Todo Page Styles------------------------------ */
+.addForm > button {
+  font-size: 1em;
+  margin-top: 1em;
+  padding: 0.75em 1.5em;
+  background-color: var(--light-green);
+  border: 3px solid var(--main-green);
+  color: var(--main-black);
+  border-radius: 999em;
+}
 
-.todoContent {
-  align-items: center;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 2em;
-  justify-content: center;
+/* Hide file input */
+.addForm input[type='file'] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  width: 0;
   margin-top: 5em;
 }
-
-.todoBox {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
+/* Show pointer on file input label to style */
+.addLabel {
+  cursor: pointer;
+  padding: 0.75em 0.5em;
+  color: var(--main-green);
+  border: 3px solid var(--light-green);
+  border-radius: 999em;
 }
 
-.todoItem {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1em;
-  padding: 0.25em 1em;
-  border: 1px solid black;
-  border-radius: 1em;
-}
-
-.todoItem input {
-  accent-color: var(--main-green);
-}
-
-.todoItem input[type='checkbox']:checked + label.strikethrough {
-  text-decoration: line-through;
-}
-
-/* ------------------------Space Page Styles------------------------------ */
-.spaceContent {
-  align-items: center;
-  overflow-y: scroll;
-  display: flex;
-  flex-flow: column nowrap;
-  max-height: 70vh;
-  gap: 1em;
-  justify-content: center;
-}
-
+/* ------------------------Song Details Page Styles------------------------------ */
 .pageContent {
   align-items: center;
   overflow-y: scroll;
@@ -241,31 +453,88 @@
   justify-content: center;
 }
 
-.homeContent {
-  align-items: center;
-  overflow-y: scroll;
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1em;
-  justify-content: center;
-}
-
-.homeStats {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  gap: 1em;
-  background-color: var(--dark-brown);
-  color: var(--main-white);
-  border-radius: 1em;
-}
-
-.homeStat {
+/* Add: Add header */
+.detailsTitle {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+}
 
-  width: 200px;
+.detailsTitle svg {
+  justify-self: start;
+  width: 2em;
+}
+
+.detailsTitle h2 {
+  text-align: center;
+  margin-right: 3em;
+  margin-left: 2em;
+  transition: all 1s ease;
+}
+
+.detailsBox {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: flex-start;
+  gap: 2em;
+}
+
+.detailsBox h3 {
+  border: 1px solid red;
+  padding: 0.5em;
+  background: var(--light-green);
+  border: 2px solid var(--main-black);
+  border-radius: 40px 20px 20px 40px;
+}
+
+/* Hide file input */
+.pageContent input[type='file'] {
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  margin-top: 5em;
+}
+/* Show pointer on file input label to style */
+.addAudioLabel {
+  cursor: pointer;
+  padding: 0.75em 0.5em;
+  color: var(--main-green);
+  border: 3px solid var(--light-green);
+  border-radius: 999em;
+}
+
+.detailsPlayBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.detailsPlayBox p {
+  width: 50%;
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+/* ANIMATION STYLES */
+
+/* RESPONSIVE STYLES */
+
+@media screen and (min-width: 480px) {
+  .addTitle h2 {
+    margin-right: 6em;
+    margin-left: 5em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  /* And even larger */
+  .addTitle h2 {
+    margin-right: 11em;
+    margin-left: 10em;
+  }
 }

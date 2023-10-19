@@ -30,7 +30,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link rel="stylesheet" href="https://use.typekit.net/ixc3vsj.css"></link>
+          <link rel="stylesheet" href="https://use.typekit.net/upm8fss.css"></link>
         </Head>
         <body>
           <Main />

@@ -1,19 +1,24 @@
 import styles from '../styles/Home.module.css';
 import Auth from './auth';
+import Nav from './nav';
 
-const Header = () => {
+type headerProps = {
+  activePage: number;
+};
+
+const Header = (props: headerProps) => {
   return (
     <>
       <header className={styles.header}>
         <img
           className={styles.logo}
-          src="../../v1.1/FC_Logo_LG.png"
-          alt="A sprouting potted plant: FloraCare's logo"
+          src="../../v1.1/SyncLabLogo_Square.png"
+          alt="A kitchen sink next to an round bottom lab flask"
         />
-        <h1 className={styles.headerTitle}>
-          Flora<span className={styles.headerTitleEnd}>Care</span>
-        </h1>
-        <Auth />
+        <div className={styles.headerLinks}>
+          <Auth />
+          <Nav activePage={props.activePage} />
+        </div>
       </header>
     </>
   );

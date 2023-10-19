@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Footer from '../components/footer';
+import Nav from '../components/nav';
 import styles from '../styles/Home.module.css';
 import Header from '../components/header';
+import AudioControls from '../components/audioControls';
 
 const About: NextPage = () => {
   return (
@@ -14,12 +15,12 @@ const About: NextPage = () => {
       </Head>
 
       <main className={styles.about}>
-        <Header />
+        <Header activePage={3} />
         <div className={styles.aboutContent}>
           <h1>This is the About page.</h1>
         </div>
+        <AudioControls />
       </main>
-      <Footer activePage={3} />
     </>
   );
 };
